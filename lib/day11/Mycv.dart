@@ -29,8 +29,9 @@ class _MycvAppState extends State<MycvApp> {
 
 // for  saving the data...
    Future<void> _saveFormData() async {
+
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('Firstname', _FirstnameController.text);
+    await prefs.setString('Firstname',_FirstnameController.text);
     await prefs.setString('Lastname', _LastnameController.text);
     await prefs.setString('Designation', _DesignationController.text);
     await prefs.setString('Address', _Addresscontroller.text);

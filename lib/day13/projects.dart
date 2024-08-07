@@ -1,4 +1,4 @@
-import 'package:application/day11/Mycv.dart';
+import 'package:application/day%2014/cv.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -11,8 +11,8 @@ class MyProjects extends StatefulWidget {
 
 class _MyProjectsState extends State<MyProjects> {
   final _formKey = GlobalKey<FormState>();
-  final _ProjectController=TextEditingController();
-  final _DescriptionController=TextEditingController();
+  final _ProjectNameController=TextEditingController();
+  final _ProjectDescriptionController=TextEditingController();
   final _GitHubLinkController=TextEditingController();
   // for skill
   final _SkillController=TextEditingController();
@@ -29,18 +29,18 @@ class _MyProjectsState extends State<MyProjects> {
   // Saving the data
   Future<void> _saveFormData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('Projects', _ProjectController.text);
-    await prefs.setString('Description', _DescriptionController.text);
+     await prefs.setString('Project', _ProjectNameController.text);
+     await prefs.setString('ProjectDescription', _ProjectDescriptionController.text);
      await prefs.setString('GitHubLink', _GitHubLinkController.text);
-    await prefs.setString('Skill', _SkillController.text);
+     await prefs.setString('Skill', _SkillController.text);
      await prefs.setString('SkillDescription', _SkillDescriptionController.text);
     
   }
   Future<void> _loadFormData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-                _ProjectController.text = prefs.getString('Projects') ?? '';
-                      _DescriptionController.text = prefs.getString('Description') ?? '';
+                _ProjectNameController.text = prefs.getString('Project') ?? '';
+                      _ProjectDescriptionController.text = prefs.getString('ProjectDescription') ?? '';
                             _GitHubLinkController.text = prefs.getString('GitHubLink') ?? '';
                                   _SkillController.text = prefs.getString('Skill') ?? '';
                                         _SkillDescriptionController.text = prefs.getString('SkillDescription') ?? '';
@@ -84,7 +84,7 @@ class _MyProjectsState extends State<MyProjects> {
                 ),
                 SizedBox(height: 10),
                 TextFormField(
-                  controller: _ProjectController,
+                  controller: _ProjectNameController,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.integration_instructions),
                     border: OutlineInputBorder(),
@@ -100,7 +100,7 @@ class _MyProjectsState extends State<MyProjects> {
                 ),
                 SizedBox(height: 10),
                 TextFormField(
-                  controller: _DescriptionController,
+                  controller: _ProjectDescriptionController,
                   maxLines: 3,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -190,7 +190,7 @@ class _MyProjectsState extends State<MyProjects> {
                       _saveFormData().then((_) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) =>MycvApp()),
+                          MaterialPageRoute(builder: (context) =>ResumePage()),
                         );
                       });
                     }
