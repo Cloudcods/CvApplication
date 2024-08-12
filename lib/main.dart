@@ -1,5 +1,5 @@
 
-import 'package:application/day11/Mycv.dart';
+import 'package:application/Day15/Dvc.dart';
 import 'package:flutter/material.dart';
 
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 64, 37, 110)),
         useMaterial3: true,
       ),
-      home:  const MycvApp(), 
+      home:  const mydvcapp(), 
     );
   }
 }

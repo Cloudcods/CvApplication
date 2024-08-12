@@ -58,6 +58,7 @@ class _EducationPageState extends State<EducationPage> {
       _startDateController.text = prefs.getString('StartDate') ?? '';
       _graduationDateController.text = prefs.getString('GraduationDate') ?? '';
       _isCurrentlyStudying = prefs.getBool('CurrentlyStudying') ?? false;
+      
     });
   }
 

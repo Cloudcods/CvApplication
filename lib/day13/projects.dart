@@ -1,4 +1,4 @@
-import 'package:application/day%2014/cv.dart';
+import 'package:application/Day15/Card.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -190,7 +190,7 @@ class _MyProjectsState extends State<MyProjects> {
                       _saveFormData().then((_) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) =>ResumePage()),
+                          MaterialPageRoute(builder: (context) =>CardPage()),
                         );
                       });
                     }
@@ -208,7 +208,7 @@ class _MyProjectsState extends State<MyProjects> {
                         style: TextStyle(color: Colors.black),
                       ),
                       SizedBox(width: 10),
-                      Icon(Icons.picture_as_pdf),
+                      Icon(Icons.file_copy),
                     ],
                   ),
                 ),
